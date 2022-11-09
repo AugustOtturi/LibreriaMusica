@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.contenedor__libreria {
+    width: 50%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 9rem);
+    grid-template-areas:
+        "uno"
+        "dos";
+    row-gap: 10px;
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+.contenedor__libreria .estante1,
+.contenedor__libreria .estante2 {
+    background-color: brown;
+    grid-area: uno;
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-end;
+}
+
+.contenedor__libreria .estante1 div,
+.contenedor__libreria .estante2 div {
+    width: 50px;
+    height: 130px;
+    background-color: black;
+    margin-bottom: 0.2rem;
+    transition: 0.1s all ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 5px 5px 0 0 ;
+
+
+}
+
+
+.contenedor__libreria .estante1 div p,
+.contenedor__libreria .estante2 div p {
+    width: 100%;
+    transform: rotate(90deg);
+    text-align: center;
+
+}
+
+.contenedor__libreria .estante1 div:hover ,
+.contenedor__libreria .estante2 div:hover{
+    background-color: rgb(255, 0, 150);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor__libreria .estante2 {
+    background-color: brown;
+    grid-area: dos;
+}
+
+
+
+@media (max-width:996px) {
+
+    .contenedor__libreria .estante1 div,
+    .contenedor__libreria .estante2 div {
+        font-size: 0.8rem;
+    }
+    .contenedor__libreria {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width:648px) {
+
+    .contenedor__libreria .estante1 div ,
+    .contenedor__libreria .estante2 div {
+        width: 35px;
+    }
+
+    .contenedor__libreria {
+        width: 98%;
+    }
+
+ 
+
+}
