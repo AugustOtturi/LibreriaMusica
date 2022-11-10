@@ -6,8 +6,8 @@
 
 
 main{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: black;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@ main{
 
 
 main .reproductores1 , main .reproductores2{
-    height: 95%;
+    height: 100vh;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ main .reproductores1 , main .reproductores2{
 }
 
 main .reproductores1 .music-Card , main .reproductores2 .music-Card{
-    height: 7rem;
+    height: 6rem;
     width: 90%;
     background-color: #261923;
     display: flex;
@@ -42,7 +42,7 @@ main .reproductores1 .music-Card , main .reproductores2 .music-Card{
     border: 2px solid white;
 }
 main .reproductores1 .music-Card p{
-    font-size: 1.2rem;
+    font-size: 100%;
     font-family: 'Kanit', sans-serif;
     font-style: italic;
     color: whitesmoke;
@@ -50,6 +50,7 @@ main .reproductores1 .music-Card p{
 }
 audio{
     width: 60%;
+    height: 40%;
 }
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-panel {
@@ -109,6 +110,9 @@ main .reproductores1 .music-Card:nth-child(2)::after{
 
 /* !Animaciones */
 
+
+
+
 main .animaciones{
     display: flex;
     flex-direction: column-reverse;
@@ -117,27 +121,23 @@ main .animaciones{
     height: 100vh;
     flex-basis: 50%;
     border: 1rem solid;
-    margin-top: 2rem;
+
 }
-main .animaciones .cielo{
-    height: 40%;
-    width: 100%;
-    border: 1px solid;
-    position: relative;
+main .animaciones .alien{
+    overflow: hidden;
+
 }
 
 
-main .animaciones .cielo .luna{
-    height: 20rem;
-    width: 20rem;
+main .animaciones .luna{
+    height: 10rem;
+    width: 10rem;
     background-color: white;
     border-radius: 50%;
-    position: absolute;
-    right: 30%;
     rotate: 35deg;
     transition: 0.8s all ease;
 }
-main .animaciones .cielo .luna::before{
+main .animaciones .luna::before{
     content: "";
     display: block;
     height: 100%;
@@ -145,11 +145,41 @@ main .animaciones .cielo .luna::before{
     background-color: black;
     border-radius: 50%;
     position: relative;
-    left: -6rem;
+    left: -3rem;
     transition: 0.7s all ease;
 }
 
-main .animaciones .cielo .luna:hover{
+main .animaciones .luna:hover{
     cursor: pointer;
     transform: rotate(120deg);
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 855px) {
+    main{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .luna{
+        display: none;
+    }
+   
+
+    main .reproductores1 , main .reproductores2{
+        width: 80%;
+    }
+
+    main .reproductores1 .music-Card::after{
+        display: none;
+    }
+    main .animaciones .alien{
+    }
+       
 }
