@@ -119,18 +119,21 @@ main .reproductores2 .music-Card:nth-child(4)::before{
 }
 main .reproductores2 .music-Card:nth-child(5)::before{
     background-image: url(./assets/portadas/confort_musica_para_volar.jpg);
+    background-size: 110%;
 }
 
 main .reproductores2 .music-Card:nth-child(6)::before{
     background-image: url(./assets/portadas/acustico.jpg);
-    background-position: 45%;
+    background-position: 49%;
     background-size: 135%;
 }
 
 /*!Tablero 2  */
 
 
-
+main .reproductores1 .music-Card:nth-child(1)::after{
+    background-image: url(./assets/portadas/El_amor_despues_del_amor.jpg);
+}
 main .reproductores1 .music-Card:nth-child(2)::after{
     background-image: url(./assets/portadas/Giros.jpg);
 }
