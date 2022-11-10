@@ -4,122 +4,86 @@
     padding: 0;
 }
 
+main{
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    padding-left: 4rem;
+    overflow: hidden;
+}
 .contenedor {
-    height: 100%;
-    width: 100%;
-    background-color: white;
-}
-
-.contenedor__libreria {
-    width: 50%;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 10px solid;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(2, 9rem);
-    grid-template-areas:
-        "uno"
-        "dos";
-    row-gap: 10px;
-    filter: drop-shadow(5px 5px 10px black);
-}
-
-.contenedor__libreria .estante1,
-.contenedor__libreria .estante2 {
-    background-color: brown;
-    grid-area: uno;
+    height: 100vh;
     display: flex;
-    justify-content:space-around;
-    align-items: flex-end;
-}
-
-.contenedor__libreria .estante1 div,
-.contenedor__libreria .estante2 div {
-    width: 50px;
-    height: 130px;
-    background-color: black;
-    margin-bottom: 0.2rem;
-    transition: 0.1s all ease;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    color: white;
-    font-size: 1rem;
-    border: 2px solid black;
-    border-top: none;
-    border-radius: 5px 5px 0 0 ;
-
-
+    align-items: flex-start;
 }
 
-
-.contenedor__libreria .estante1 div p,
-.contenedor__libreria .estante2 div p {
-    width: 100%;
-    transform: rotate(90deg);
-    text-align: center;
-
+.contenedor div{
+    width: 20rem;
+    height: 4rem;
+    background-color:rgb(236, 233, 233);
+    transform: 
+        perspective(10rem)
+        rotatex(60deg)
+        scale(0.7);
+        margin-top: -2.5rem;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transition: 0.4s all ease;
+        border: 4px solid black;
 }
-
-.contenedor__libreria .estante1 div:hover ,
-.contenedor__libreria .estante2 div:hover{
-    background-color: rgb(255, 0, 150);
+.contenedor div:hover{
+    transform:
+      rotate(0deg)
+      scale(1.3)
+      translateY(10px);
+      z-index: 15;
+      margin-bottom: 2rem;
+      cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.contenedor__libreria .estante2 {
-    background-color: brown;
-    grid-area: dos;
+.contenedor div audio{
+    height: 20px;
+    filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
 }
 
 
 
-@media (max-width:996px) {
-
-    .contenedor__libreria .estante1 div,
-    .contenedor__libreria .estante2 div {
-        font-size: 0.8rem;
-    }
-    .contenedor__libreria {
-        width: 80%;
-    }
-
+main .animaciones{
+    height: 90vh;
+    width: 50vw;
+    display: flex;
+    position: relative;
 
 }
+main .animaciones .girl{
+    position: absolute;
+    top: 31%;
+}
 
-@media (max-width:648px) {
-
-    .contenedor__libreria .estante1 div ,
-    .contenedor__libreria .estante2 div {
-        width: 35px;
-    }
-
-    .contenedor__libreria {
-        width: 98%;
-    }
-
- 
-
+main .animaciones .music{
+    position: absolute;
+    top: 45%;
+    right: 4rm;
+    transform: rotateY(180deg);
+}
+main .animaciones .alien{
+    position: absolute;
+    top: 9rem;
+    left: 12rem;
+    transform: rotate(45deg);
+}
+main .animaciones .alien2{
+    position: absolute;
+    transform: rotate(-45deg);
+    color: tomato;
+}
+main .animaciones .alien3{
+    position: absolute;
+    right: 2rem;
+    top: -2rem;
+    transform: rotate(120deg);
 }
