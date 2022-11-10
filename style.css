@@ -1,89 +1,155 @@
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 main{
-    display: flex;
-    align-self: flex-start;
-    justify-content: flex-start;
-    padding-left: 4rem;
-    overflow: hidden;
-}
-.contenedor {
     height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+}
+
+
+main .reproductores1 , main .reproductores2{
+    height: 95%;
+    width: 30%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 1.2rem;
+   
+}
+
+main .reproductores1 .music-Card , main .reproductores2 .music-Card{
+    height: 7rem;
+    width: 90%;
+    background-color: #261923;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 0 5px 0 black;
+    border: 2px solid white;
+}
+main .reproductores1 .music-Card p{
+    font-size: 1.2rem;
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    color: whitesmoke;
     justify-content: center;
-    align-items: flex-start;
+}
+audio{
+    width: 60%;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+background-color:#ffffff;
+
+
+}
+main .reproductores1 .music-Card:hover , .reproductores2 .music-Card:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 4px 4px 2px 0px black;
+    z-index: 60;
 }
 
-.contenedor div{
-    width: 20rem;
-    height: 4rem;
-    background-color:rgb(236, 233, 233);
-    transform: 
-        perspective(10rem)
-        rotatex(60deg)
-        scale(0.7);
-        margin-top: -2.5rem;
-        color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        transition: 0.4s all ease;
-        border: 4px solid black;
-}
-.contenedor div:hover{
-    transform:
-      rotate(0deg)
-      scale(1.3)
-      translateY(10px);
-      z-index: 15;
-      margin-bottom: 2rem;
-      cursor: pointer;
-}
-.contenedor div audio{
-    height: 20px;
-    filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+main .reproductores1 .music-Card::after{
+    content:"";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 33%;
+    height: 90%;
+    position: absolute;
+    margin: auto 0;
+    right: -35%;
+    transition: 0.4s all;
+    transform: scaleY(0);
+    border: 2px solid white;
 }
 
 
+main .reproductores1 .music-Card:hover::after{
+    transform: scaleY(1);
+}
+
+
+
+
+
+main .reproductores1 .music-Card:nth-child(1)::after{
+    background-image: url(./assets/portadas/El_amor_despues_del_amor.jpg);
+}
+
+main .reproductores1 .music-Card:nth-child(2)::after{
+    background-image: url(./assets/portadas/Giros.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* !Animaciones */
 
 main .animaciones{
-    height: 90vh;
-    width: 50vw;
     display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    flex-basis: 50%;
+    border: 1rem solid;
+    margin-top: 2rem;
+}
+main .animaciones .cielo{
+    height: 40%;
+    width: 100%;
+    border: 1px solid;
     position: relative;
-
-}
-main .animaciones .girl{
-    position: absolute;
-    top: 31%;
 }
 
-main .animaciones .music{
+
+main .animaciones .cielo .luna{
+    height: 20rem;
+    width: 20rem;
+    background-color: white;
+    border-radius: 50%;
     position: absolute;
-    top: 45%;
-    right: 4rm;
-    transform: rotateY(180deg);
+    right: 30%;
+    rotate: 35deg;
+    transition: 0.8s all ease;
 }
-main .animaciones .alien{
-    position: absolute;
-    top: 9rem;
-    left: 12rem;
-    transform: rotate(45deg);
+main .animaciones .cielo .luna::before{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: -6rem;
+    transition: 0.7s all ease;
 }
-main .animaciones .alien2{
-    position: absolute;
-    transform: rotate(-45deg);
-    color: tomato;
-}
-main .animaciones .alien3{
-    position: absolute;
-    right: 2rem;
-    top: -2rem;
+
+main .animaciones .cielo .luna:hover{
+    cursor: pointer;
     transform: rotate(120deg);
 }
