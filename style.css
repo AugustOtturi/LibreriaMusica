@@ -179,7 +179,4 @@ main .animaciones .luna:hover{
     main .reproductores1 .music-Card::after{
         display: none;
     }
-    main .animaciones .alien{
-    }
-       
 }
